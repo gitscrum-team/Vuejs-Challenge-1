@@ -34,9 +34,18 @@
     <Content Include="public\favicon.ico" />
     <Content Include="public\index.html" />
     <Content Include="src\App.vue" />
+    <Content Include="src\components\Board.vue">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\components\Card.vue">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="src\components\Home.vue" />
     <Content Include="package.json" />
     <Content Include="README.md" />
+    <Content Include="src\components\Sort.vue">
+      <SubType>Code</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="dist\" />
@@ -44,6 +53,8 @@
     <Folder Include="src\" />
     <Folder Include="src\assets\" />
     <Folder Include="src\components\" />
+    <Folder Include="src\imgs\" />
+    <Folder Include="src\imgs\icons\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="src\main.js" />
