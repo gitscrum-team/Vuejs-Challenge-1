@@ -46,7 +46,7 @@
         <input class="form-control" v-model="boardName" placeholder="board name" />
       </div>
     </div>
-    
+
     <draggable class="row align-items-start" v-model="boards" handle=".handle">
       <div class="card card-board" v-for="(board, index ) in boards" :key="index" group="boards">
         <div class="card-header font-weight-bold">
@@ -77,7 +77,7 @@
             v-if="board.editMode"
             class="btn btn-danger btn-block"
             v-on:click="removeBoard(index)"
-          >delele board {{index}}</button>
+          >delele board</button>
         </div>
       </div>
     </draggable>
