@@ -2,6 +2,8 @@
 
 Create a **task board** that can create and reorder multiple task lists.
 
+![alt text](https://i.ibb.co/sC18XsH/Capture.png "Task Board")
+
 ### Requirements
 
 1. The **task board** must start with 1 empty column
