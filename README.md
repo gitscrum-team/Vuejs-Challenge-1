@@ -1,3 +1,22 @@
+# How to run the project
+
+#### Install dependencies
+
+    yarn install
+
+#### Compile the project
+
+    yarn run build
+
+The compiled files will be placed in the `dist`  folder (this folder is not in git ignore as requested)
+
+#### Run using the builded in server (for development purposes only)
+
+    yarn run serve
+
+
+
+
 # Building a Useful Task Board
 
 Create a **task board** that can create and reorder multiple task lists.
