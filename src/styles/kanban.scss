@@ -1,0 +1,24 @@
+// importing default style
+@import 'node_modules/vue-kanban/src/assets/kanban.scss';
+
+.kanban-board {
+    .drag-item div {
+        height: 100%;
+    }
+    h6.block-title {
+        text-align: left;
+        &[contenteditable="true"] {
+            background-color: white;
+            color: #494949;
+        }
+    }
+    span.drag-column-header {
+        div:first-child {
+            width: 100%;
+            h2 {
+                text-align: left;
+                line-height: 2em;
+            }
+        }
+    }
+}

@@ -1,0 +1,52 @@
+{
+  "name": "gitscrum-task-board",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Create a task board that can create and reorder multiple task lists.",
+  "author": {
+    "name": "YDigital Media",
+    "email": "dev@ydigitalmedia.com"
+  },
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "test:unit": "vue-cli-service test:unit"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "bootstrap-vue": "^2.0.0",
+    "core-js": "^3.4.8",
+    "fifo-array": "^0.1.2",
+    "vue": "^2.6.10",
+    "vue-class-component": "^7.0.2",
+    "vue-kanban": "^1.6.0",
+    "vue-property-decorator": "^8.1.0",
+    "vue-router": "^3.0.3",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.23",
+    "@vue/cli-plugin-babel": "^4.1.1",
+    "@vue/cli-plugin-typescript": "^4.1.1",
+    "@vue/cli-plugin-unit-jest": "^4.1.1",
+    "@vue/cli-service": "^4.1.1",
+    "@vue/test-utils": "^1.0.0-beta.30",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^24.9.0",
+    "jest": "^24.9.0",
+    "label-edit": "^0.1.0",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^8.0.0",
+    "ts-jest": "^24.2.0",
+    "typescript": "^3.4.3",
+    "vue-jest": "^3.0.5",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Gomes81/Vuejs-Challenge-1.git"
+  },
+  "license": "CC-BY-NC-ND-4.0"
+}
