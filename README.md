@@ -1,37 +1,29 @@
-# Building a Useful Task Board
+# gitscrum
 
-Create a **task board** that can create and reorder multiple task lists.
+## Project setup
+```
+yarn install
+```
 
-![alt text](https://i.ibb.co/sC18XsH/Capture.png "Task Board")
+### Compiles and hot-reloads for development
+```
+yarn run serve
+```
 
-### Requirements
+### Compiles and minifies for production
+```
+yarn run build
+```
 
-1. The **task board** must start with 1 empty column
+### Run your tests
+```
+yarn run test
+```
 
-2. **Task Board** features:
-  * Add, remove, reorder tasks
-  * Add, remove, reorder columns
-  * Move task between different columns
-  * Sort the tasks of a column alphabetically
+### Lints and fixes files
+```
+yarn run lint
+```
 
-3. Task title should always be visible
-
-
-### Important
-
-   - You should use Vue.js and Yarn
-   - You can use VueJS Libraries
-   - You do not need persistent data
-   - Code quality is more important than appearance (UI)
-  
-### Instructions
-
-  - Fork the repository
-  - Develop your **task board** solution
-  - Open a pull-request
-
-
-### Notes
-
-  - Submit original and compiled files
-  - If your solution needs instructions to run, please detail step-by-step in pull-request or readme.
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
