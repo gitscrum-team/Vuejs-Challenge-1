@@ -1,0 +1,32 @@
+{
+    "name": "vuejs-challenge-1",
+    "author": "Aldo Bernardes Maciel",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "serve": "vue-cli-service serve",
+        "build": "vue-cli-service build"
+    },
+    "dependencies": {
+        "bootstrap": "^4.4.1",
+        "core-js": "^3.4.3",
+        "eva-icons": "^1.1.2",
+        "node.normalize.scss": "^3.0.3",
+        "sweetalert2": "^9.5.3",
+        "vue": "^2.6.10",
+        "vue-class-component": "^7.0.2",
+        "vue-initials-img": "^1.0.4",
+        "vue-property-decorator": "^8.3.0",
+        "vuedraggable": "^2.23.2"
+    },
+    "devDependencies": {
+        "@vue/cli-plugin-babel": "^4.1.0",
+        "@vue/cli-plugin-typescript": "^4.1.0",
+        "@vue/cli-service": "^4.1.0",
+        "node-sass": "^4.12.0",
+        "prettier": "^1.19.1",
+        "sass-loader": "^8.0.0",
+        "typescript": "~3.5.3",
+        "vue-template-compiler": "^2.6.10"
+    }
+}

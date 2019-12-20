@@ -1,0 +1,24 @@
+$eva-icons-font-path: "~eva-icons/style/fonts";
+@import "~eva-icons/style/scss/eva-icons";
+@import "~bootstrap";
+@import "~node.normalize.scss";
+@import "./assets/variables";
+
+.vuejs-challange-1 {
+    font-family: "Avenir", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: $board-background-color;
+    height: 100vh;
+    width: 100vw;
+    overflow: auto;
+
+    .pointer {
+        cursor: pointer;
+    }
+
+    .white-color {
+        color: $white-color;
+    }
+
+}

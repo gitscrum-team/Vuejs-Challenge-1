@@ -1,0 +1,42 @@
+@import "./../../../assets/variables";
+
+.board-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: $board-container-background-color;
+    border-radius: .3rem;
+    box-shadow: .1rem .1rem .4rem $board-container-shadow-color;
+    margin: 1rem .5rem 1rem 0;
+    min-width: 30rem;
+    min-height: 5rem;
+    transform: unset !important;
+
+    &-title {
+        margin: .15rem;
+        padding: 1rem;
+        width: 75%;
+    }
+
+    &-card {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+    }
+    &-sort,
+    &-close {
+        cursor: pointer;
+        position: absolute;
+        top: .25rem;
+    }
+
+    &-close {
+        right: .3rem;
+    }
+
+    &-sort {
+        right: 3rem;
+    }
+}

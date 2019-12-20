@@ -1,0 +1,36 @@
+@import "./../../../assets/variables";
+
+.board-task {
+    border-radius: .3rem;
+    box-shadow: .1rem .1rem .4rem $board-container-shadow-color;
+    display: flex;
+    flex-direction: column;
+    height: 9rem;
+    margin: .5rem;
+    position: relative;
+    width: 95%;
+
+    &-title {
+        margin-left: .5rem;
+        padding: .3rem;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        width: 90%;
+    }
+
+    &-owners {
+        border-left: .4rem solid;
+        display: flex;
+        padding: .3rem;
+        min-height: 3.5rem;
+    }
+
+    &-avatar {
+        margin: 0 .1rem;
+
+        img {
+            border-radius: 50%;
+        }
+    }
+}
