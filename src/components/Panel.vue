@@ -1,51 +1,58 @@
 <template>
-    <div class="panel">
-        <div slot="header" class="header">{{ title }}</div>
-        <box :tasks="tasks" @deleta="remove"/>
-        <button @click.prevent="add" class="button">+</button>
-    </div>
+    <draggable
+            :list="items"
+            :disabled="!enabled"
+            class="list-group-panel"
+            ghost-class="ghost"
+            @start="dragging = true"
+            @end="dragging = false"
+            group="box"
+    >
+        <transition type="transition" :name="!dragging ? 'flip-list' : null">
+            <div class="list-group-panel-item">
+                <div slot="header" class="header">{{ title }}</div>
+                <box :tasks="items"/>
+                <button @click.prevent="add" class="button">+</button>
+            </div>
+        </transition>
+    </draggable>
+
 </template>
 
 <script>
     import Box from "./Box";
+    import draggable from "vuedraggable";
 
-    let id = 1;
     export default {
         name: 'Panel',
         components: {
-            Box
+            Box,
+            draggable
         },
-        data () {
+        data() {
             return {
                 enabled: true,
-                tasks: [
-                    { id: id++, title: "Design UX Flows", category: 'purple', color: ['purple'], users: ['user-1.jpg', 'user-2.jpg'] },
-                    { id: id++, title: "Launch Website", category: 'yellow', color: ['yellow', 'red'], users: ['user-3.jpg'] },
-                    { id: id++, title: "Client Meeting", category: 'red', color: ['blue'], users: ['user-2.jpg', 'user-4.jpg'] },
-                    { id: id++, title: "Release Build", category: 'blue', color: ['green'], users: ['user-4.jpg'] },
-                    { id: id++, title: "Develop API", category: 'green', color: ['purple'], users: ['user-3.jpg', 'user-1.jpg'] }
-                ],
+                dragging: false,
             }
         },
         props: {
             title: {
                 type: String,
                 required: true
+            },
+            items: {
+                type: Array,
+                required: true
+            },
+            panel: {
+                type: Array
             }
         },
         methods: {
-            add () {
+            add() {
                 this.tasks.push(
-                    { id: id++, title: "Final Tests", category: 'gray', color: ['red'], users: ['user-5.jpg', 'user-1.jpg'] }
+                    {id: 1, title: "Final Tests", category: 'gray', color: ['red'], users: ['user-5.jpg', 'user-1.jpg']}
                 );
-            },
-            remove (id) {
-                let newList = this.tasks;
-                for( var i = 0; i < this.tasks.length; i++){
-                    if ( newList[i].id === id) {
-                        newList.splice(i, 1);
-                    }
-                }
             }
         }
     }

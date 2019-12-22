@@ -7,6 +7,7 @@
                 ghost-class="ghost"
                 @start="dragging = true"
                 @end="dragging = false"
+                group="box"
         >
             <transition-group type="transition" :name="!dragging ? 'flip-list' : null">
                 <div
@@ -40,7 +41,6 @@
                             />
                         </div>
                     </div>
-                    <div class="remove" @click="deleta(element.id)">x</div>
                 </div>
             </transition-group>
         </draggable>
@@ -60,7 +60,6 @@
             return {
                 enabled: true,
                 dragging: false,
-                imgLink: '../assets/images/'
             };
         },
         props: {
@@ -69,11 +68,6 @@
                 required: true
             }
         },
-        methods: {
-            deleta (id) {
-                this.$emit('deleta', id )
-            }
-        }
     };
 </script>
 
