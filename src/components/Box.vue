@@ -7,7 +7,6 @@
                 ghost-class="ghost"
                 @start="dragging = true"
                 @end="dragging = false"
-                group="box"
         >
             <transition-group type="transition" :name="!dragging ? 'flip-list' : null">
                 <div

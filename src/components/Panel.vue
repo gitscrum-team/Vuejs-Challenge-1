@@ -1,6 +1,6 @@
 <template>
     <draggable
-            :list="items"
+            :list="panel"
             :disabled="!enabled"
             class="list-group-panel"
             ghost-class="ghost"
@@ -11,7 +11,7 @@
         <transition type="transition" :name="!dragging ? 'flip-list' : null">
             <div class="list-group-panel-item">
                 <div slot="header" class="header">{{ title }}</div>
-                <box :tasks="items"/>
+                <box :tasks="items" @deleta="remove"/>
                 <button @click.prevent="add" class="button">+</button>
             </div>
         </transition>
@@ -35,6 +35,9 @@
                 dragging: false,
             }
         },
+        created() {
+            window.console.log(this.items)
+        },
         props: {
             title: {
                 type: String,
@@ -53,6 +56,14 @@
                 this.tasks.push(
                     {id: 1, title: "Final Tests", category: 'gray', color: ['red'], users: ['user-5.jpg', 'user-1.jpg']}
                 );
+            },
+            remove(id) {
+                let newList = this.tasks;
+                for (var i = 0; i < this.tasks.length; i++) {
+                    if (newList[i].id === id) {
+                        newList.splice(i, 1);
+                    }
+                }
             }
         }
     }
