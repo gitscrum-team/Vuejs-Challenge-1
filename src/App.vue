@@ -1,28 +1,30 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <div id="app">
+        <panel title="Doing"/>
+    </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
-export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
-}
+    import Panel from "./components/Panel";
+
+    export default {
+        name: 'app',
+        components: {Panel}
+    }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+    @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap');
+    @import url('assets/css/reset.css');
+
+    body {
+        background-color: #5e74eb;
+        font-family: 'Roboto', sans-serif;
+        color: #ffffff;
+    }
+
+    #app {
+        padding: 30px;
+    }
 </style>
