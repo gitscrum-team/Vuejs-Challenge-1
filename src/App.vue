@@ -1,7 +1,12 @@
 <template>
     <div id="app">
         <div v-for="(item, index) in tasks" :key="index">
-            <panel :panel="tasks" :title="item.title" :items="item.items"/>
+            <panel
+                    :panel="tasks"
+                    :title="item.title"
+                    :items="item.items"
+                    @add="add(index)"
+            />
         </div>
     </div>
 </template>
@@ -9,6 +14,7 @@
 <script>
     import Panel from "./components/Panel";
 
+    let id = 1;
     export default {
         name: 'app',
         components: {Panel},
@@ -19,19 +25,27 @@
                     {
                         title: 'Doing',
                         items : [
-                            { id: 1, title: "Design UX Flows", category: 'purple', color: ['purple'], users: ['user-1.jpg', 'user-2.jpg'] },
-                            { id: 2, title: "Launch Website", category: 'yellow', color: ['yellow', 'red'], users: ['user-3.jpg'] },
-                            { id: 3, title: "Client Meeting", category: 'red', color: ['blue'], users: ['user-2.jpg', 'user-4.jpg'] },
-                            { id: 4, title: "Release Build", category: 'blue', color: ['green'], users: ['user-4.jpg'] },
-                            { id: 5, title: "Develop API", category: 'green', color: ['purple'], users: ['user-3.jpg', 'user-1.jpg'] }
+                            { id: id++, title: "Design UX Flows", category: 'purple', color: ['purple'], users: ['user-1.jpg', 'user-2.jpg'] },
+                            { id: id++, title: "Launch Website", category: 'yellow', color: ['yellow', 'red'], users: ['user-3.jpg'] },
+                            { id: id++, title: "Client Meeting", category: 'red', color: ['blue'], users: ['user-2.jpg', 'user-4.jpg'] },
+                            { id: id++, title: "Release Build", category: 'blue', color: ['green'], users: ['user-4.jpg'] },
+                            { id: id++, title: "Develop API", category: 'green', color: ['purple'], users: ['user-3.jpg', 'user-1.jpg'] }
                         ]
                     },
                     {
                         title: 'Done',
-                        items: []
+                        items: [
+                        ]
                     }
                 ]
             }
+        },
+        methods: {
+            add(index) {
+                this.tasks[index].items.push(
+                    {id: id++, title: "Final Tests", category: 'gray', color: ['red'], users: ['user-5.jpg', 'user-1.jpg']}
+                );
+            },
         }
     }
 </script>

@@ -7,6 +7,7 @@
                 ghost-class="ghost"
                 @start="dragging = true"
                 @end="dragging = false"
+                group="box"
         >
             <transition-group type="transition" :name="!dragging ? 'flip-list' : null">
                 <div
@@ -31,19 +32,18 @@
                                     v-for="(color, index) in element.color"
                                     :key="index"
                                     :style="{
-                                        width: '30px',
-                                        height: '10px',
-                                        borderRadius: '5px',
-                                        marginLeft: '5px',
-                                        backgroundColor: color
-                                    }"
+                                            width: '30px',
+                                            height: '10px',
+                                            borderRadius: '5px',
+                                            marginLeft: '5px',
+                                            backgroundColor: color
+                                        }"
                             />
                         </div>
                     </div>
                 </div>
             </transition-group>
         </draggable>
-
     </div>
 </template>
 
@@ -59,6 +59,15 @@
             return {
                 enabled: true,
                 dragging: false,
+                item: [
+                    {
+                        id: 100,
+                        title: "Develop API",
+                        category: 'green',
+                        color: ['purple'],
+                        users: ['user-3.jpg', 'user-1.jpg']
+                    }
+                ]
             };
         },
         props: {
@@ -73,7 +82,7 @@
 <style>
 
     .flip-list-move {
-        transition: transform 1.5s;
+        transition: transform .2s;
     }
 
     .no-move {
@@ -87,6 +96,7 @@
 
     .list-group {
         width: 100%;
+        min-height: 200px;
         box-sizing: border-box;
     }
 
@@ -137,21 +147,5 @@
         display: flex;
         flex-direction: row;
     }
-    .remove {
-        width: 15px;
-        height: 15px;
-        border-radius: 50px;
-        color: #FFFFFF;
-        text-align: center;
-        background-color: #fe0e57;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
-        right: 77%;
-        z-index: 100;
-    }
-    .remove:hover {
-        cursor: pointer;
-    }
+
 </style>

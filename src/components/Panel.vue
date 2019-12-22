@@ -6,17 +6,16 @@
             ghost-class="ghost"
             @start="dragging = true"
             @end="dragging = false"
-            group="box"
+            group="panel"
     >
         <transition type="transition" :name="!dragging ? 'flip-list' : null">
             <div class="list-group-panel-item">
                 <div slot="header" class="header">{{ title }}</div>
-                <box :tasks="items" @deleta="remove"/>
+                <box :tasks="items"/>
                 <button @click.prevent="add" class="button">+</button>
             </div>
         </transition>
     </draggable>
-
 </template>
 
 <script>
@@ -35,9 +34,6 @@
                 dragging: false,
             }
         },
-        created() {
-            window.console.log(this.items)
-        },
         props: {
             title: {
                 type: String,
@@ -53,18 +49,8 @@
         },
         methods: {
             add() {
-                this.tasks.push(
-                    {id: 1, title: "Final Tests", category: 'gray', color: ['red'], users: ['user-5.jpg', 'user-1.jpg']}
-                );
+                this.$emit('add')
             },
-            remove(id) {
-                let newList = this.tasks;
-                for (var i = 0; i < this.tasks.length; i++) {
-                    if (newList[i].id === id) {
-                        newList.splice(i, 1);
-                    }
-                }
-            }
         }
     }
 </script>
